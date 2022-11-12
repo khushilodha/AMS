@@ -50,7 +50,7 @@ module.exports = {
                 departmentHelper = "05"
 
             }
-            else if (department === "E.E.E") {
+            else if (department === "E.E") {
                 departmentHelper = "06"
             }
             else {
@@ -283,22 +283,22 @@ module.exports = {
             });
             let departmentHelper;
             if (department === "C.S.E") {
-                departmentHelper = "01"
+                departmentHelper = "CS"
             }
             else if (department === "E.C.E") {
-                departmentHelper = "02"
+                departmentHelper = "EC"
             }
             else if (department === "I.T") {
-                departmentHelper = "03"
+                departmentHelper = "IT"
             }
             else if (department === "Mechanical") {
-                departmentHelper = "04"
+                departmentHelper = "ME"
             }
             else if (department === "Civil") {
-                departmentHelper = "05"
+                departmentHelper = "CE"
             }
             else {
-                departmentHelper = "06"
+                departmentHelper = "EE"
             }
 
             const faculties = await Faculty.find({ department })
@@ -318,8 +318,8 @@ module.exports = {
             const joiningYear = date.getFullYear()
             var components = [
                 "FAC",
-                date.getFullYear(),
                 departmentHelper,
+                date.getFullYear(),
                 helper
             ];
 

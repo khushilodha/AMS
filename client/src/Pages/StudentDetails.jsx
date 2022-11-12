@@ -89,7 +89,7 @@ const StudentDetails = () => {
                                             <select onChange={(e) => setDepartment(e.target.value)} className="form-control" id="bramchId">
                                                 <option>Select</option>
                                                 <option value="E.C.E">E.C.E</option>
-                                                <option value="E.E.E" >E.E.E</option>
+                                                <option value="E.E" >E.E</option>
                                                 <option value="Mechanical">Mechanical</option>
                                                 <option value="Civil">Civil</option>
                                                 <option value="I.T">I.T</option>
