@@ -39,6 +39,7 @@ const AdminAddFaculty = () => {
             aadharCard,
             gender,
             dob: dob.split("-").reverse().join("-")}))
+            
     }
 
     useEffect(() => {
@@ -121,20 +122,34 @@ const AdminAddFaculty = () => {
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="genderId">Gender</label>
-                                            <select onChange={(e) => setGender(e.target.value)} className="form-control" id="genderId">
+                                            <select onChange={(e) => setGender(e.target.value)} className={classnames("form-control",
+                                                {
+                                                    'is-invalid': error.gender
+                                                })}id="genderId">
                                                 <option>Select</option>
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
                                                 <option value="Other">Other</option>
                                             </select>
+                                            {error.gender && (<div className="invalid-feedback">{error.gender}</div>)}
+
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="numberId">Contact Number</label>
-                                            <input onChange={(e) => setFacultyMobileNumber(e.target.value)} type="number" className="form-control" id="numberId" />
+                                            <input onChange={(e) => setFacultyMobileNumber(e.target.value)} type="number" className={classnames("form-control",
+                                                {
+                                                    'is-invalid': error.facultyMobileNUmber
+                                                })} id="numberId"  />
+                                                {error.facultyMobileNUmber && (<div className="invalid-feedback">{error.facultyMobileNUmber}</div>)}
                                         </div>
                                         <div className="form-group">
                                             <label htmlFor="aadharId">Aadhar Card Number</label>
-                                            <input onChange={(e) => setAadharCard(e.target.value)} type="number" className="form-control" id="aadharId" />
+                                            <input onChange={(e) => setAadharCard(e.target.value)} type="number" className={classnames("form-control",
+                                                {
+                                                    'is-invalid': error.aadharCard
+                                                })} id="aadharId" required/>
+                                                {error.aadharCard && (<div className="invalid-feedback">{error.aadharCard}</div>)}
+
                                         </div>
                                     </div>
                                 </div>

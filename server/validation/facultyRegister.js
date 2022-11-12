@@ -9,6 +9,11 @@ const validateFacultyRegisterInput = (data) => {
     data.department = !isEmpty(data.department) ? data.department : '';
     data.designation = !isEmpty(data.designation) ? data.designation : '';
     data.dob = !isEmpty(data.dob) ? data.dob : '';
+    data.facultyMobileNUmber = !isEmpty(data.facultyMobileNUmber) ? data.facultyMobileNUmber : '';
+    data.gender = !isEmpty(data.gender) ? data.gender : '';
+    data.aadharCard = !isEmpty(data.aadharCard) ? data.aadharCard : '';
+
+
 
     if (!Validator.isLength(data.name, { min: 2, max: 30 })) {
         errors.name = 'Name must be between 2 and 30 characters';
@@ -36,6 +41,16 @@ const validateFacultyRegisterInput = (data) => {
     if (Validator.isEmpty(data.designation)) {
         errors.designation = 'Designation field is required';
     }
+    if (Validator.isEmpty(data.facultyMobileNUmber)) {
+        errors.facultyMobileNUmber = 'This field is required';
+    }
+    if (Validator.isEmpty(data.gender)) {
+        errors.gender = 'This field is required';
+    }
+    if (Validator.isEmpty(data.aadharCard)) {
+        errors.aadharCard = 'Aadhar Card field is required';
+    }
+
 
     return {
         errors,

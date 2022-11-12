@@ -22,6 +22,7 @@ const facultySchema = new Schema({
     },
     gender: {
         type: String,
+        required: true,
     },
     designation: {
         type: String,

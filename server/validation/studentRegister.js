@@ -10,6 +10,11 @@ const validateStudentRegisterInput = (data) => {
     data.section = !isEmpty(data.section) ? data.section : '';
     data.dob = !isEmpty(data.dob) ? data.dob : '';
     data.year = !isEmpty(data.year) ? data.year : '';
+    data.gender = !isEmpty(data.gender) ? data.gender : '';
+    data.contactNumber = !isEmpty(data.contactNumber) ? data.contactNumber : '';
+    data.fName = !isEmpty(data.fName) ? data.fName : '';
+    data.fcontact = !isEmpty(data.fcontact) ? data.fcontact : '';
+    data.aadharCard = !isEmpty(data.aadharCard) ? data.aadharCard : '';
 
     if (!Validator.isLength(data.name, { min: 2, max: 30 })) {
         errors.name = 'Name must be between 2 and 30 characters';
@@ -42,6 +47,21 @@ const validateStudentRegisterInput = (data) => {
 
     if (Validator.isEmpty(data.dob)) {
         errors.dob = 'DOB field is required';
+    }
+    if (Validator.isEmpty(data.gender)) {
+        errors.gender = 'This field is required';
+    }
+    if (Validator.isEmpty(data.contactNumber)) {
+        errors.contactNumber = 'This field is required';
+    }
+    if (Validator.isEmpty(data.fName)) {
+        errors.fName = 'This field is required';
+    }
+    if (Validator.isEmpty(data.fcontact)) {
+        errors.fcontact = 'This field is required';
+    }
+    if (Validator.isEmpty(data.aadharCard)) {
+        errors.aadharCard = 'This field is required';
     }
 
     return {
