@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const { Schema } = mongoose
+const { Schema } = mongoos
 
 const adminSchema = new Schema({
     name: {
